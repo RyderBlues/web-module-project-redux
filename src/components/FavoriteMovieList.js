@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import { Link } from 'react-router-dom';
+import { ReactReduxContext } from 'react-redux';
 
 
 const FavoriteMovieList = (props) => {
@@ -11,9 +13,9 @@ const FavoriteMovieList = (props) => {
         {
             favorites.map(movie=>{
                 return <div key={movie.id}>
-                    <Link className="btn btn-light savedButton" to={`/movies/${movie.id}`}>
+                    <Link className="btn btn-light savedButton" to={`/movies/`}>
                         {movie.title}
-                        <span><span class="material-icons">remove_circle</span></span>
+                        <span><span className="material-icons">remove_circle</span></span>
                     </Link> 
                 </div>
             })
